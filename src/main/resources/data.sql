@@ -1,0 +1,2 @@
+INSERT INTO users (sso_id, password, first_name, user_role) VALUES ('admin', '$2a$10$fkPfg44QXLThNDRaKgowLOKaWTAA2qJ9vkal4cmb5DmLSw0r4DbbW', 'admin', 0);
+INSERT INTO users (sso_id, password, first_name, user_role) VALUES ('user', '$2a$10$fkPfg44QXLThNDRaKgowLOKaWTAA2qJ9vkal4cmb5DmLSw0r4DbbW', 'user', 1);

@@ -3,17 +3,24 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>vss.springsecurity</groupId>
-  <artifactId>ssmod2</artifactId>
+  <artifactId>ss-mod</artifactId>
   <version>1.0.0</version>
   <packaging>war</packaging>
 
   <name>SpringSecurityMod2</name>
 
  	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
 		<springframework.version>5.1.0.RELEASE</springframework.version>
-		<springsecurity.version>4.0.1.RELEASE</springsecurity.version>
-		<hibernate.version>4.3.6.Final</hibernate.version>
+		<springsecurity.version>5.2.1.RELEASE</springsecurity.version>
+		<hibernate.version>5.4.10.Final</hibernate.version>
+		<spring-data-jpa.version>2.1.6.RELEASE</spring-data-jpa.version>
 		<mysql.version>5.1.31</mysql.version>
+		<logback.version>1.2.3</logback.version>
+		<lombok.version>1.18.10</lombok.version>
+		<javax.servlet-jstl.version>1.2</javax.servlet-jstl.version>
 	</properties>
 
 	<dependencies>
@@ -44,6 +51,11 @@
 			<artifactId>spring-orm</artifactId>
 			<version>${springframework.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>
+			<version>${spring-data-jpa.version}</version>
+		</dependency>
 		
 
 		<!-- Spring Security -->
@@ -70,12 +82,19 @@
 			<version>${hibernate.version}</version>
 		</dependency>
 
-		<!-- MySQL -->
 		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>${mysql.version}</version>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+			<version>1.4.199</version>
 		</dependency>
+
+		<!-- MySQL -->
+<!--		<dependency>-->
+<!--			<groupId>mysql</groupId>-->
+<!--			<artifactId>mysql-connector-java</artifactId>-->
+<!--			<version>${mysql.version}</version>-->
+<!--		</dependency>-->
 
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -85,12 +104,22 @@
 		<dependency>
 			<groupId>javax.servlet.jsp</groupId>
 			<artifactId>javax.servlet.jsp-api</artifactId>
-			<version>2.3.1</version>
+			<version>2.3.3</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
-			<version>1.2</version>
+			<version>${javax.servlet-jstl.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${logback.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${lombok.version}</version>
 		</dependency>
 	</dependencies>
 
@@ -103,12 +132,12 @@
 					<version>2.4</version>
 					<configuration>
 						<warSourceDirectory>src/main/webapp</warSourceDirectory>
-						<warName>ssmod2</warName>
+						<warName>ss-mod</warName>
 						<failOnMissingWebXml>false</failOnMissingWebXml>
 					</configuration>
 				</plugin>
 			</plugins>
 		</pluginManagement>
-		<finalName>ssmod2</finalName>
+		<finalName>ss-mod</finalName>
 	</build>
 </project>
